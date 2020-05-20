@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-4 offset-4">
+    <a href="/" class="btn btn-secondary center">Go Home</a>
+    <div class="card mt-3">
+        <div class="card-header">
+            <a href="/{{ todo.id }}">
+                <h4>{{ todo.name }}</h4>
+            </a>
+        </div>
+        <div class="card-body">
+            <p>The todo name is : {{ todo.name }}</p>
+            <p>The Due date is : {{ todo.due_date }}</p>
+        </div>
+        <div class="card-footer">
+            <a href="/{{ todo.id }}/update/" class="btn btn-secondary">Update This Todo</a>
+            <a href="/{{ todo.id }}/delete/" class="btn btn-secondary">Delete This Todo</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% if request.user.is_authenticated %}
+Hello {{ request.user.username }}
+{% else %}
+<h2> Hello Anonymous User</h2>
+{% endif %}
+The todo name is : {{ todo.name }}
+The Due date is : {{ todo.due_date }}
+
+
+
+</html>
