@@ -12,7 +12,7 @@ app_name = 'todo'
 urlpatterns = [
     path('', todo_list),
     path('create/', todo_create),
-    path('<id>/detail/', todo_detail),
+    path('<id>/', todo_detail),
     path('<id>/update/', todo_update),
     path('<id>/delete/', todo_delete)
 ]
